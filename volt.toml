@@ -1,18 +1,39 @@
-name = "<plugin-name>"
+name = "c#"
 version = "0.0.0"
-author = "<your name>"
-display-name = "<plugin-display-name>"
-description = "<plugin-description>"
-wasm = "bin/<plugin-name>.wasm"
+author = "M.A.G."
+display-name = "c#"
+description = "c# plugin lapce"
+wasm = "target/wasm32-wasi/release/lapce-plugin-csharp.wasm"
+icon = "logo.png"
+repository = "https://github.com/Magniveo/lapce-csharp-plugin.git"
 
 [activation]
-language = []
-workspace-contains = []
+language = ["csharp"]
+workspace-contains = ["*/*.csx", "*/*.cs", "*/*.sln"]
 
 [config."lsp.serverPath"]
 default = ""
 description = "Path to custom LSP executable"
 
+[config."volt.serverPath"]
+default = ""
+description = "Path to custom LSP executable"
+
+[config."volt.serverArgs"]
+default = [""]
+description = "LSP server arguments to pass when launching"
+
+[config."csharp.solution"]
+default = ""
+description = "Path to the solution file"
+
+[config."csharp.loglevel"]
+default = "error"
+description = "the default log level"
+
+[config."csharp.plugindebug"]
+default = "false"
+description = "enables detailed logging about the plugin-lsp interaction"
 # [config."lsp.serverArgs"]
 # default = []
 # description = ""
